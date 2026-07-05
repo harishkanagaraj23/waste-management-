@@ -27,7 +27,7 @@ export default function StaffDashboard() {
   const fetchCollections = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/collections', {
+      const res = await fetch('https://waste-management-1-nb53.onrender.com/api/collections', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -70,7 +70,7 @@ export default function StaffDashboard() {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/collections', {
+      const res = await fetch('https://waste-management-1-nb53.onrender.com/api/collections', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: submissionData

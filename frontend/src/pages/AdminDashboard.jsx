@@ -37,7 +37,7 @@ export default function AdminDashboard() {
 
   const fetchStats = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/dashboard/stats', {
+      const res = await fetch('https://waste-management-1-nb53.onrender.com/api/dashboard/stats', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -52,7 +52,7 @@ export default function AdminDashboard() {
   const fetchIssues = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/issues', {
+      const res = await fetch('https://waste-management-1-nb53.onrender.com/api/issues', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -68,7 +68,7 @@ export default function AdminDashboard() {
 
   const handleResolveIssue = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/issues/${id}`, {
+      const res = await fetch(`https://waste-management-1-nb53.onrender.com/api/issues/${id}`, {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ export default function AdminDashboard() {
     setNotifMessage('');
 
     try {
-      const res = await fetch('http://localhost:5000/api/notifications', {
+      const res = await fetch('https://waste-management-1-nb53.onrender.com/api/notifications', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -312,7 +312,7 @@ export default function AdminDashboard() {
 
                   {item.photo_url && (
                     <div className="ticket-photo-link">
-                      <a href={`http://localhost:5000${item.photo_url}`} target="_blank" rel="noreferrer">
+                      <a href={`https://waste-management-1-nb53.onrender.com${item.photo_url}`} target="_blank" rel="noreferrer">
                         View Photo Evidence
                       </a>
                     </div>

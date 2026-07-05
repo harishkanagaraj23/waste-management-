@@ -24,14 +24,14 @@ export default function CitizenDashboard() {
     setLoading(true);
     try {
       // 1. Fetch Notifications
-      const notifRes = await fetch('http://localhost:5000/api/notifications?role=citizen');
+      const notifRes = await fetch('https://waste-management-1-nb53.onrender.com/api/notifications?role=citizen');
       if (notifRes.ok) {
         const notifData = await notifRes.json();
         setNotifications(notifData);
       }
 
       // 2. Fetch My reported Issues
-      const issuesRes = await fetch('http://localhost:5000/api/issues', {
+      const issuesRes = await fetch('https://waste-management-1-nb53.onrender.com/api/issues', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (issuesRes.ok) {
@@ -71,7 +71,7 @@ export default function CitizenDashboard() {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/issues', {
+      const res = await fetch('https://waste-management-1-nb53.onrender.com/api/issues', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: submissionData // Multi-part form-data
@@ -214,7 +214,7 @@ export default function CitizenDashboard() {
                   
                   {issue.photo_url && (
                     <div className="complaint-image-wrapper">
-                      <a href={`http://localhost:5000${issue.photo_url}`} target="_blank" rel="noreferrer">
+                      <a href={`https://waste-management-1-nb53.onrender.com${issue.photo_url}`} target="_blank" rel="noreferrer">
                         View Attached Evidence Photo
                       </a>
                     </div>
